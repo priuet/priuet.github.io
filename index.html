@@ -90,34 +90,32 @@
     </div>
 	
 	<!--всплывающие окна-->
-
-
-<!-- Modal -->
-<div class="modal fade" id="work-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Работа $</h4>
-      </div>
-      <div class="modal-body">
-      <div class="row">
-      	<div class="col-lg-7">
-      		<img src="img/portfolio/1.jpg" alt="первая работа">
-      		<h4>сайт для ресторана</h4>
-      		<p>описание сайта</p>
-      		<a href="https:vk.me/priueet" class="modal-btn">Заказать такой сайт</a>
-      	</div>
-      	<div class="clo-lg-5"></div>
-      </div>
-      </div> 
-    </div>
-  </div>
-</div>
-
+<div class="modal fade" id="work" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title">Описание проекта</h4>
+			      </div>
+			      <div class="modal-body">
+			        
+			      </div>
+			    </div>
+			  </div>
+			</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+    	$(function() {
+    		var link = $('a[data-toggle="modal"]');
+    		link.on('click', function(event) {
+    			var work = $(this).attr('data-work');
+    			var modal = $('.modal');
+    			modal.find('.modal-body').load(work+'.html');
+    		});
+    	});
+    </script>
   </body>
 </html>
